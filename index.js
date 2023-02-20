@@ -3,6 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 const messageRoutes = require("./routes/messages");
+const emptyRoutes = require("./routes/emptyRoutes.js");
 const app = express();
 const socket = require("socket.io");
 require("dotenv").config();
@@ -21,8 +22,8 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-app.use("/", () => {});
 
+app.use('/',emptyRoutes)
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 

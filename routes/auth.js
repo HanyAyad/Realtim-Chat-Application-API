@@ -7,7 +7,6 @@ const {
 } = require("../controllers/userController");
 
 const router = require("express").Router();
-const cors = require("cors");
 
 router.post("/login", login);
 router.post("/register", register);
